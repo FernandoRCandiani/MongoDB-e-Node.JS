@@ -1,0 +1,25 @@
+<h2>Perfil: </h2>
+<hr>
+{{#each usuarios}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <p>imagem</p>
+            <h4>{{nome}}</h4>
+            <p>Email: {{email}}</p>
+            
+            <div>
+                <a href="/usuarios/perfis/editperfis/{{_id}}">
+                    <button class="btn btn-success mt-4">Editar perfil</button>
+                </a>
+            
+                <form action="/usuarios/perfis/deletar" method="POST">
+                    <input type="hidden" name="id" value="{{_id}}">
+                    <button type="submit" class="btn btn-danger mt-2">Deletar perfil</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+{{else}}
+    <h3 class="mt-4">Nenhum perfil cadastrado</h3>
+{{/each}}

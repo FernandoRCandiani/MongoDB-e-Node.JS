@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem-vindo a pagina de perfis!</h1>
+  <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente, hic nisi totam iusto est doloribus tenetur alias pariatur dignissimos consequatur impedit, architecto excepturi illum praesentium delectus et dolores vel?.</p>
+  <hr class="my-4">
+  {{#if user}}
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas corrupti quia accusantium dicta! Alias asperiores deserunt quis quasi repellendus qui cum, fuga totam rerum ad a blanditiis, vitae dolorum similique?.</p>
+    <a class="btn btn-primary btn-lg" href="/usuarios/perfis" role="button">Seu Perfil</a>
+  {{else}}
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas corrupti quia accusantium dicta! Alias asperiores deserunt quis quasi repellendus qui cum, fuga totam rerum ad a blanditiis, vitae dolorum similique?.</p>
+    <a class="btn btn-primary btn-lg" href="usuarios/cadastro" role="button">Cadastre-se</a>
+  {{/if}}
+</div>
+<hr>
+<h2>Lista de perfis</h2>
+
+{{#each usuarios}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>{{nome}}</h3>
+            <p>{{email}}</p>
+        </div>
+    </div>
+{{else}}
+    <h3>Nenhum Perfil</h3>
+{{/each}}
